@@ -15,12 +15,17 @@
     "noImplicitThis": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
-    "suppressImplicitAnyIndexErrors": true,
     "noUnusedLocals": true,
     "declaration": true,
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true
   },
   "include": ["src/**/*", "types/**/*"],
-  "exclude": ["node_modules", "build", "scripts", "src/Joystick.stories.tsx", "src/Joystick.test.tsx"]
+  "exclude": [
+    "node_modules",
+    "build",
+    "scripts",
+    "src/Joystick.stories.tsx",
+    "src/Joystick.test.tsx"
+  ]
 }

@@ -416,8 +416,8 @@ class Joystick extends React.Component<IJoystickProps, IJoystickState> {
 
     //  animations
     if (this.props.stickAnimation) {
-      // only animate while dragging
-      if (this.state.dragging) {
+      // only animate when the drag ends
+      if (!this.state.dragging) {
         stickStyle.transition = this.props.stickAnimation;
       }
     }
