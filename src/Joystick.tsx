@@ -393,7 +393,7 @@ class Joystick extends React.Component<IJoystickProps, IJoystickState> {
       border: "none",
       flexShrink: 0,
       touchAction: "none",
-    } as any;
+    } as React.CSSProperties;
     if (this.props.stickImage) {
       stickStyle.background = `url(${this.props.stickImage})`;
       stickStyle.backgroundSize = "100%";
@@ -415,9 +415,10 @@ class Joystick extends React.Component<IJoystickProps, IJoystickState> {
     }
 
     //  animations
-    if (this.props.stickAnimation) {
+    if (this.props.stickAnimation !== undefined) {
       // only animate when the drag ends
       if (!this.state.dragging) {
+        console.log("drag ended. settings styles");
         stickStyle.transition = this.props.stickAnimation;
       }
     }
