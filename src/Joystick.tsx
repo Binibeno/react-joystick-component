@@ -23,6 +23,7 @@ export interface IJoystickProps {
   minDistance?: number;
   baseClassName?: string;
   stickClassName?: string;
+  stickAnimation?: string; // null by default. Set to a string like "all 200ms" to enable animations
   pos?: { x: number; y: number };
 }
 
@@ -411,6 +412,14 @@ class Joystick extends React.Component<IJoystickProps, IJoystickState> {
         position: "absolute",
         transform: `translate3d(${this.state.coordinates.relativeX}px, ${this.state.coordinates.relativeY}px, 0)`,
       });
+    }
+
+    //  animations
+    if (this.props.stickAnimation) {
+      // only animate while dragging
+      if (this.state.dragging) {
+        stickStyle.transition = this.props.stickAnimation;
+      }
     }
     return stickStyle;
   }
