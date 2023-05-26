@@ -21,8 +21,8 @@ export interface IJoystickProps {
   stickShape?: JoystickShape;
   controlPlaneShape?: JoystickShape;
   minDistance?: number;
-  baseClassName: string;
-  stickClassName: string;
+  baseClassName?: string;
+  stickClassName?: string;
   pos?: { x: number; y: number };
 }
 
