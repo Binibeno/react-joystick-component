@@ -23,7 +23,7 @@ export interface IJoystickProps {
   minDistance?: number;
   baseClassName?: string;
   stickClassName?: string;
-  stickAnimation?: string; // null by default. Set to a string like "all 200ms" to enable animations
+  stickAnimation?: string; // null by default. Set to a string like "all 200ms" to enable animations when you let go off the stick
   pos?: { x: number; y: number };
 }
 
@@ -418,7 +418,6 @@ class Joystick extends React.Component<IJoystickProps, IJoystickState> {
     if (this.props.stickAnimation !== undefined) {
       // only animate when the drag ends
       if (!this.state.dragging) {
-        console.log("drag ended. settings styles");
         stickStyle.transition = this.props.stickAnimation;
       }
     }
